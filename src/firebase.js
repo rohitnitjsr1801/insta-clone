@@ -10,6 +10,7 @@ import 'firebase/compat/firestore';
 const firebaseConfig = {
   apiKey: "AIzaSyD4IgSv495aRW2e-Thvd9ktu59iZgD5_7k",
   authDomain: "reelify-c9dab.firebaseapp.com",
+  databaseURL: "https://reelify-c9dab-default-rtdb.firebaseio.com",
   projectId: "reelify-c9dab",
   storageBucket: "reelify-c9dab.appspot.com",
   messagingSenderId: "362941312455",
