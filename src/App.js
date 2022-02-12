@@ -1,39 +1,28 @@
-import React from 'react';
-
-import './static/scss/app.scss';
-import 'react-router-dom';
-import { Route,Switch } from 'react-router-dom';
-import Header from './components/presentation/header';
-import Footer from './components/presentation/footer';
-import LandingPage from './components/presentation/landingPage';
-import GettingStarted from './components/presentation/gettingStarted';
-import Login from './components/presentation/login';
-import Register from './components/presentation/register';
-import AboutUs from './components/presentation/aboutUs';
-import Contacts from './components/presentation/contact';
-import Education from './components/presentation/education';
-import Finalize from  './components/presentation/finalizePage';
-import PrivateRoute from './components/PrivateRoute';
+import logo from './logo.svg';
+import Navbar from './Components/Navbar';
+import Banner from './Components/Banner';
+import Movies from './Components/Movies';
+import Favourite from './Components/Favourite';
+import {BrowserRouter as Router,Switch,Route, BrowserRouter} from 'react-router-dom';
+import './App.css';
 
 function App() {
   return (
-    <div>
-     <Header></Header>
-
-     <Switch>
-          <PrivateRoute path="/education" component={Education}></PrivateRoute>
-          <PrivateRoute path="/contact" component={Contacts}></PrivateRoute>
-          <Route path="/getting-started" component={GettingStarted}></Route>
-          <PrivateRoute path="/resume-templates" component={GettingStarted}></PrivateRoute>
-          <Route path="/about-us"     component={AboutUs}></Route>
-          <PrivateRoute path="/finalize" component={Finalize}></PrivateRoute>
-          <Route path="/login" component={Login}></Route>
-          <Route path="/register" component={Register}></Route>             
-          <Route path="/" component={LandingPage}></Route>
+    <Router>
+      <Navbar/>
+      <Switch>
+        <Route path='/' exact render={(props)=>(
+          <>
+            <Banner {...props}/>
+            <Movies {...props}/>
+          </>
+        )}/>
+        <Route path='/favourites' component={Favourite} />
       </Switch>
-      <Footer></Footer>   
-    </div>
-   
+      {/* <Banner/> */}
+      {/* <Movies/> name="udai" */}
+      {/* <Favourite/> */}
+    </Router>
   );
 }
 
