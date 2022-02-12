@@ -16,7 +16,7 @@ You will also see any lint errors in the console.
 
 ### 'App link'
 
-You can see the app here [https://movies-app-rohit1801.netlify.app/].
+You can see the app here [https://movies-app-rohit-1801.netlify.app/].
 
 ### 'Tech Stack Used'
 
